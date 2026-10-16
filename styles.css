@@ -1,29 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #8d5650;
+  color: #fff6f3;
+}
+
 body {
   background-color: rosybrown;
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.3), transparent 45%),
+    radial-gradient(circle at 80% 90%, rgba(84, 42, 42, 0.25), transparent 50%);
+  background-attachment: fixed;
   font-family: Arial, sans-serif;
+  min-height: 100vh;
+  padding-bottom: 80px;
 }
 
 .business-card {
   width: 300px;
   background-color: whitesmoke;
+  background-image: linear-gradient(180deg, #ffffff, #f6efec);
   padding: 20px;
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(93, 58, 58, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 24px 48px rgba(63, 32, 32, 0.28), 0 6px 14px rgba(63, 32, 32, 0.16);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.business-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 56px rgba(63, 32, 32, 0.32), 0 8px 16px rgba(63, 32, 32, 0.18);
+}
+
+.business-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, transparent, rosybrown 25%, #8d5650 50%, rosybrown 75%, transparent);
 }
 
 .profile-image {
   max-width: 100%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 0 3px rosybrown, 0 12px 22px rgba(63, 32, 32, 0.35);
+  margin-top: 16px;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.06) rotate(-2deg);
 }
 
 p {
   margin-top: 5px;
   margin-bottom: 5px;
+  line-height: 1.5;
+  color: #5d4343;
+}
+
+.full-name {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #3f2626;
+  line-height: 1.2;
+}
+
+.designation {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a2645e;
+}
+
+.company {
+  font-size: 14px;
+  font-style: italic;
+  color: #7d6262;
+}
+
+hr {
+  width: 80%;
+  height: 2px;
+  border: none;
+  border-radius: 2px;
+  margin: 18px auto;
+  background-image: linear-gradient(90deg, transparent, rgba(141, 86, 80, 0.55), transparent);
 }
 
 a {
   text-decoration: none;
+}
+
+.portfolio-link {
+  display: inline-block;
+  padding: 10px 28px;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff6f3;
+  background: linear-gradient(135deg, #b0766f, #8d5650);
+  border-radius: 999px;
+  box-shadow: 0 8px 16px rgba(90, 45, 45, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.portfolio-link:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 20px rgba(90, 45, 45, 0.4);
+}
+
+.social-media h2 {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #3f2626;
+  margin: 4px 0 12px;
+}
+
+.social-media a {
+  display: inline-block;
+  padding: 8px 13px;
+  margin: 4px 3px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #8d5650;
+  background-color: #fbeeea;
+  border: 1px solid rgba(141, 86, 80, 0.3);
+  border-radius: 999px;
+  box-shadow: 0 3px 8px rgba(90, 45, 45, 0.12);
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-media a:hover {
+  background-color: rosybrown;
+  color: #fff6f3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(90, 45, 45, 0.28);
 }
 
